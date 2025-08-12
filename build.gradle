@@ -19,7 +19,7 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+	implementation 'com.squareup.okhttp3:okhttp:3.14.2'
     implementation 'io.micrometer:micrometer-core:1.1.0'
 }
 
