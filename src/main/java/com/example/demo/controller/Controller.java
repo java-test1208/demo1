@@ -16,8 +16,6 @@ public class Controller {
     @Autowired
     private OkHttpClient okHttpClient;
 
-    private int requestCount = 0;
-
     @GetMapping("/hello")
     public String helloWorld() throws IOException {
 
@@ -29,13 +27,10 @@ public class Controller {
 
         Call call = okHttpClient.newCall(request);
 
-        try (Response response = call.execute()) {
-            String responseSource = response.networkResponse() == null ? "CACHE" : "NETWORK";
-            System.out.println("Request #" + requestCount + " served from: " + responseSource);
-
+        try (Response response = call.execute()) {  
             response.body().close();
 
-            return "Request " + requestCount + " handled. Response from: " + responseSource;
+            return "Request completed successfully";
         }
     }
 }
